@@ -586,15 +586,15 @@
         .panelist-card {
             background: var(--white);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 0;
             margin-bottom: 1.5rem;
             border: 1px solid var(--light-gray);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 1.5rem;
-            align-items: center;
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            overflow: hidden;
         }
         .panelist-card:hover {
             transform: translateY(-3px);
@@ -602,13 +602,13 @@
             border-color: var(--gold);
         }
         .panelist-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 3px solid rgba(201,168,76,0.35);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            width: 180px;
+            min-width: 180px;
+            height: auto;
+            min-height: 100%;
             background: var(--cream);
+            flex-shrink: 0;
+            border-right: 1px solid rgba(201,168,76,0.25);
         }
         .panelist-photo img {
             width: 100%;
@@ -616,10 +616,17 @@
             object-fit: cover;
             object-position: center center;
             display: block;
+            border-radius: 0;
         }
         .panelist-photo.dorri-photo img {
             object-position: center 18%;
             transform: scale(1.12);
+        }
+        .panelist-content {
+            flex: 1;
+            min-width: 0;
+            padding: 2rem;
+            background: var(--white);
         }
         .panelist-card h4 {
             font-family: 'Playfair Display', serif;
@@ -729,14 +736,20 @@
             .connect-grid { grid-template-columns: 1fr; }
             .registration-box .price-row { gap: 1.5rem; }
             .panelist-card {
-                grid-template-columns: 1fr;
-                padding: 1.25rem;
+                display: block;
             }
             .panelist-photo {
+                display: block;
                 width: 100%;
-                max-width: 220px;
+                max-width: 100%;
+                min-width: 100%;
                 height: 220px;
-                margin: 0 auto;
+                border-right: none;
+                border-bottom: 1px solid rgba(201,168,76,0.25);
+            }
+            .panelist-content {
+                width: 100%;
+                padding: 1.25rem;
             }
             .panelist-card h4,
             .panelist-card .panelist-role,
@@ -865,7 +878,7 @@
                 <div class="panelist-photo">
                     <img src="Art%20Hopkins_Headshot.jpg" alt="Art Hopkins headshot">
                 </div>
-                <div>
+                <div class="panelist-content">
                     <h4>Art Hopkins</h4>
                     <span class="panelist-role">Global Head, NextGen Tech Officers Practice<br>Russell Reynolds Associates</span>
                     <p>Art Hopkins brings deep expertise in executive search and leadership advisory, specializing in technology officer succession, executive assessment, and board readiness for senior leaders across global organizations.</p>
@@ -876,7 +889,7 @@
                 <div class="panelist-photo dorri-photo">
                     <img src="Dorri%20Exec%20Club%20Headshot.jpg" alt="Dorri McWhorter headshot">
                 </div>
-                <div>
+                <div class="panelist-content">
                     <h4>Dorri McWhorter</h4>
                     <span class="panelist-role">President &amp; CEO<br>The Executives' Club of Chicago</span>
                     <p>Dorri McWhorter is a recognized executive leader focused on talent development, leadership pipelines, and engagement across the Chicago business community. Her experience strengthens the conversation around leadership advancement and board visibility.</p>
@@ -887,7 +900,7 @@
                 <div class="panelist-photo">
                     <img src="OIP.jpg" alt="Sylvia Prickel headshot">
                 </div>
-                <div>
+                <div class="panelist-content">
                     <h4>Sylvia Prickel</h4>
                     <span class="panelist-role">Exec. Committee Chair, Sponsor Co-Chair &amp; Past Board Chair<br>Private Directors Association</span>
                     <p>Sylvia Prickel brings practical insight into board service, private directorship, and governance strategy, helping organizations think critically about leadership transitions and board effectiveness.</p>
@@ -898,7 +911,7 @@
                 <div class="panelist-photo">
                     <img src="Ann-Madea.jpg" alt="Ann Madea headshot">
                 </div>
-                <div>
+                <div class="panelist-content">
                     <span class="moderator-badge">Moderator</span>
                     <h4>Ann Madea</h4>
                     <span class="panelist-role">Retired EVP &amp; Chief Information Officer<br>Simmons Bank</span>
