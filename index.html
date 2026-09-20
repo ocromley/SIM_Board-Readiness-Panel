@@ -728,6 +728,21 @@
             .rating-scale { justify-content: center; }
             .connect-grid { grid-template-columns: 1fr; }
             .registration-box .price-row { gap: 1.5rem; }
+            .panelist-card {
+                grid-template-columns: 1fr;
+                padding: 1.25rem;
+            }
+            .panelist-photo {
+                width: 100%;
+                max-width: 220px;
+                height: 220px;
+                margin: 0 auto;
+            }
+            .panelist-card h4,
+            .panelist-card .panelist-role,
+            .panelist-card p {
+                text-align: center;
+            }
         }
     </style>
     <base target="_blank">
@@ -1166,7 +1181,10 @@
                 btn.classList.remove('active');
             });
             document.getElementById('btn-' + pageId).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            window.scrollTo({ top: 0, behavior: 'auto' });
         }
     </script>
 </body>
