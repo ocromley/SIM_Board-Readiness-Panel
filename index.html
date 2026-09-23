@@ -271,6 +271,37 @@
             color: rgba(255,255,255,0.7);
             font-size: 0.9rem;
         }
+        .hero-cta-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.5rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+        }
+        .hero-cta.primary {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--navy);
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
         .speaker-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -824,6 +855,10 @@
                         <strong>Yash Technologies</strong>
                         <span>333 N. Michigan Ave, Floor 4, Chicago, IL</span>
                     </div>
+                </div>
+                <div class="hero-cta-row">
+                    <a href="https://www.sim-chicago.org/page/Membership" class="hero-cta primary" target="_blank" rel="noopener noreferrer">SIM Membership</a>
+                    <a href="https://www.sim-chicago.org/page/About" class="hero-cta" target="_blank" rel="noopener noreferrer">The SIM Foundation</a>
                 </div>
             </div>
         </div>
