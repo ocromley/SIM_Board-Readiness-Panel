@@ -250,6 +250,15 @@
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.2);
             margin-top: 0.5rem;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .hero-location:hover {
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.16);
+            transform: translateY(-2px);
         }
         .hero-location .loc-icon {
             width: 50px;
@@ -849,13 +858,13 @@
                         <span>5:30 PM – 8:30 PM</span>
                     </div>
                 </div>
-                <div class="hero-location">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Yash+Technologies%2C+333+N.+Michigan+Ave%2C+Floor+4%2C+Chicago%2C+IL" class="hero-location" target="_blank" rel="noopener noreferrer" aria-label="Open Yash Technologies address in Google Maps">
                     <div class="loc-icon">📍</div>
                     <div class="loc-text">
                         <strong>Yash Technologies</strong>
                         <span>333 N. Michigan Ave, Floor 4, Chicago, IL</span>
                     </div>
-                </div>
+                </a>
                 <div class="hero-cta-row">
                     <a href="https://www.sim-chicago.org/page/Membership" class="hero-cta primary" target="_blank" rel="noopener noreferrer">SIM Membership</a>
                     <a href="https://www.sim-chicago.org/page/About" class="hero-cta" target="_blank" rel="noopener noreferrer">The SIM Foundation</a>
