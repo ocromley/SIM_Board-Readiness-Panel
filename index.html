@@ -139,6 +139,65 @@
             line-height: 1.8;
             margin: 0 auto;
         }
+        .foundation-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 23, 39, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1.5rem;
+        }
+        .foundation-modal[hidden] {
+            display: none;
+        }
+        .foundation-modal-card {
+            background: var(--white);
+            border-radius: 18px;
+            max-width: 760px;
+            width: min(100%, 760px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+            border: 1px solid rgba(201,168,76,0.35);
+            overflow: hidden;
+        }
+        .foundation-modal-header {
+            background: linear-gradient(135deg, var(--sim-blue) 0%, #003d6b 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+        }
+        .foundation-modal-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .foundation-modal-close {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            border-radius: 50%;
+            width: 2.2rem;
+            height: 2.2rem;
+            font-size: 1.3rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .foundation-modal-body {
+            padding: 1.75rem 1.5rem 1.5rem;
+            color: var(--navy);
+        }
+        .foundation-modal-body p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        .foundation-modal-body p:last-child {
+            margin-bottom: 0;
+        }
         .hero-box {
             min-height: calc(100vh - 80px);
             display: flex;
@@ -936,17 +995,17 @@
                 </a>
                 <div class="hero-cta-row">
                     <a href="https://www.sim-chicago.org/page/Membership" class="hero-cta primary" target="_blank" rel="noopener noreferrer">SIM Membership</a>
-                    <button type="button" class="hero-cta" style="cursor: default;">The SIM Foundation</button>
+                    <button type="button" class="hero-cta" id="simFoundationButton">The SIM Foundation</button>
                 </div>
             </div>
         </div>
 
-        <div class="box foundation-notice">
+        <div class="box foundation-notice" hidden>
             <div class="box-header">
                 <h2>SIM Foundation</h2>
                 <div class="divider"></div>
             </div>
-            <p>Thank you for your support of the SIM Foundation! The SIM Foundation is a 501c3 tax-exempt non-profit, EIN 20-4516332. SIM and its Chapters seek to give back to their local communities by supporting programs that contribute to the vitality and continuation of the Information Technology profession.</p>
+            <p>Thank you for your support of the SIM Foundation! The SIM Foundation is a 501(c)(3) tax-exempt non-profit, EIN 20-4516332. SIM and its Chapters seek to give back to their local communities by supporting programs that contribute to the vitality and continuation of the Information Technology profession.</p>
         </div>
 
         <div class="box">
@@ -1386,6 +1445,19 @@
         <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">Society for Information Management - Chicago Chapter</p>
     </footer>
 
+    <div class="foundation-modal" id="foundationModal" hidden>
+        <div class="foundation-modal-card" role="dialog" aria-modal="true" aria-labelledby="foundationModalTitle">
+            <div class="foundation-modal-header">
+                <h3 id="foundationModalTitle">The SIM Foundation</h3>
+                <button type="button" class="foundation-modal-close" aria-label="Close SIM Foundation information" onclick="closeFoundationModal()">×</button>
+            </div>
+            <div class="foundation-modal-body">
+                <p>Thank you for your support of the SIM Foundation! The SIM Foundation is a 501(c)(3) tax-exempt non-profit, EIN 20-4516332.</p>
+                <p>SIM and its Chapters seek to give back to their local communities by supporting programs that contribute to the vitality and continuation of the Information Technology profession.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
@@ -1401,6 +1473,27 @@
             document.documentElement.scrollTop = 0;
             window.scrollTo({ top: 0, behavior: 'auto' });
         }
+
+        function openFoundationModal() {
+            document.getElementById('foundationModal').hidden = false;
+        }
+
+        function closeFoundationModal() {
+            document.getElementById('foundationModal').hidden = true;
+        }
+
+        document.getElementById('simFoundationButton').addEventListener('click', openFoundationModal);
+        document.getElementById('foundationModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeFoundationModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeFoundationModal();
+            }
+        });
     </script>
 </body>
 </html>
