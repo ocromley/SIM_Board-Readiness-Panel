@@ -394,6 +394,64 @@
             color: var(--gray);
             font-weight: 500;
         }
+        .upcoming-events {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .upcoming-events-image {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin: 0 auto 2rem;
+            border-radius: 8px;
+        }
+        .upcoming-event {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .upcoming-event:first-child { padding-top: 0; }
+        .upcoming-event:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .upcoming-event-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .upcoming-event h3 {
+            margin: 0.25rem 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+        }
+        .upcoming-event h3 a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+        .upcoming-event h3 a:hover {
+            color: var(--sim-blue);
+            text-decoration: underline;
+        }
+        .upcoming-event-details {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        .upcoming-event-details span + span::before {
+            content: ' | ';
+            color: var(--gold);
+            padding: 0 0.35rem;
+        }
+        .upcoming-event-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--sim-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .upcoming-event-link:hover { text-decoration: underline; }
         .itinerary-list {
             list-style: none;
             max-width: 700px;
@@ -840,6 +898,7 @@
             <button onclick="showPage('panel')" id="btn-panel">Panel</button>
             <button onclick="showPage('topics')" id="btn-topics">Topics</button>
             <button onclick="showPage('sponsors')" id="btn-sponsors">Sponsors</button>
+            <button onclick="showPage('upcoming')" id="btn-upcoming">Upcoming</button>
             <button onclick="showPage('survey')" id="btn-survey">Survey</button>
             <button onclick="showPage('connect')" id="btn-connect">Connect</button>
             <button onclick="showPage('sim')" id="btn-sim">About SIM</button>
@@ -1039,7 +1098,7 @@
     <div class="page" id="page-sponsors">
         <div class="page-arrows" style="padding: 1rem 2rem; justify-content: space-between; background: var(--cream);">
             <button onclick="showPage('topics')">← Topics</button>
-            <button onclick="showPage('survey')">Next → Survey</button>
+            <button onclick="showPage('upcoming')">Next → Upcoming Events</button>
         </div>
         <div class="box">
             <div class="box-header">
@@ -1071,14 +1130,76 @@
             </div>
         </div>
         <div class="page-arrows bottom-nav">
+            <button onclick="showPage('upcoming')">Next → Upcoming Events</button>
+        </div>
+    </div>
+
+    <!-- PAGE 5: UPCOMING EVENTS -->
+    <div class="page" id="page-upcoming">
+        <div class="page-arrows" style="padding: 1rem 2rem; justify-content: space-between; background: var(--cream);">
+            <button onclick="showPage('sponsors')">← Sponsors</button>
+            <button onclick="showPage('survey')">Next → Survey</button>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <h2>Upcoming Events</h2>
+                <div class="divider"></div>
+                <p>Connect with the SIM Chicago community at these upcoming events.</p>
+            </div>
+
+            <img src="EVENT.jpg" alt="SIM Chicago members gathered at an event" class="upcoming-events-image">
+
+            <div class="upcoming-events">
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Wednesday, October 7, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069548&amp;group=" target="_blank" rel="noopener noreferrer">Intent Engineering</a></h3>
+                    <p class="upcoming-event-details"><span>October 7, 2026</span><span>Rosemont, Illinois</span><span>5:30 - 8:30 pm</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069548&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Tuesday, October 13, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069549&amp;group=" target="_blank" rel="noopener noreferrer">SIM Chicago TLA Networking Event</a></h3>
+                    <p class="upcoming-event-details"><span>October 13, 2026</span><span>5:30 - 7:30 PM</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069549&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Wednesday, October 14, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2090821&amp;group=" target="_blank" rel="noopener noreferrer">2026 CIO of the Year - Finalists Reception</a></h3>
+                    <p class="upcoming-event-details"><span>October 14, 2026</span><span>Chicago, Illinois</span><span>5:30 - 8:30 PM</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2090821&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Wednesday, November 18, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=1956902&amp;group=" target="_blank" rel="noopener noreferrer">SIM Chicago - 2026 CIO of the Year Awards Gala Dinner</a></h3>
+                    <p class="upcoming-event-details"><span>November 18, 2026</span><span>5:30 - 8:30 PM</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=1956902&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Tuesday, December 1, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069554&amp;group=" target="_blank" rel="noopener noreferrer">SIM Chicago TLA Networking Event</a></h3>
+                    <p class="upcoming-event-details"><span>December 1, 2026</span><span>5:30 - 7:30 PM</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069554&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+                <article class="upcoming-event">
+                    <p class="upcoming-event-date">Thursday, December 10, 2026</p>
+                    <h3><a href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069556&amp;group=" target="_blank" rel="noopener noreferrer">SIM Chicago Winter Member Breakfast</a></h3>
+                    <p class="upcoming-event-details"><span>December 10, 2026</span></p>
+                    <a class="upcoming-event-link" href="https://www.sim-chicago.org/events/EventDetails.aspx?id=2069556&amp;group=" target="_blank" rel="noopener noreferrer">View event details</a>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.sim-chicago.org/events/event_list.asp" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View All SIM Chicago Events</a>
+            </div>
+        </div>
+        <div class="page-arrows bottom-nav">
             <button onclick="showPage('survey')">Next → Survey</button>
         </div>
     </div>
 
-    <!-- PAGE 5: SURVEY -->
+    <!-- PAGE 6: SURVEY -->
     <div class="page" id="page-survey">
         <div class="page-arrows" style="padding: 1rem 2rem; justify-content: space-between; background: var(--cream);">
-            <button onclick="showPage('sponsors')">← Sponsors</button>
+            <button onclick="showPage('upcoming')">← Upcoming Events</button>
             <button onclick="showPage('connect')">Next → Connect</button>
         </div>
         <div class="box">
