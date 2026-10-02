@@ -130,7 +130,7 @@
             margin: 0 auto;
         }
         .foundation-notice {
-            max-width: 900px;
+            max-width: 1130px;
             margin: 0.9rem auto 2rem;
             padding: 0;
             background: transparent;
@@ -143,30 +143,74 @@
             line-height: 1.8;
             margin: 0 auto;
         }
+        .foundation-donation-layout {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 1.2rem;
+            width: 100%;
+        }
+        .foundation-tribute-card,
         .foundation-donation-card {
-            max-width: 430px;
-            width: min(100%, 430px);
-            margin: 0 auto;
-            padding: 0.8rem 1rem;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.35);
             background: rgba(255,255,255,0.08);
+            box-shadow: none;
+        }
+        .foundation-tribute-card {
+            flex: 1.8;
+            min-height: 290px;
+            padding: 1.2rem 1.5rem 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.8rem;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+        }
+        .foundation-tribute-content {
+            width: 100%;
+            color: rgba(255,255,255,0.96);
+            text-align: left;
+        }
+        .foundation-tribute-card h4 {
+            margin: 0 0 0.6rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+            line-height: 1.15;
+            font-weight: 600;
+            color: #d4b76a;
+        }
+        .foundation-tribute-card p {
+            margin: 0 0 0.7rem;
+            font-size: clamp(0.78rem, 0.92vw, 0.96rem);
+            line-height: 1.5;
+            color: rgba(255,255,255,0.96);
+            max-width: 100%;
+        }
+        .foundation-tribute-card p:last-child {
+            margin-bottom: 0;
+        }
+        .foundation-tribute-card strong {
+            color: #d4b76a;
+            font-weight: 700;
+        }
+        .foundation-donation-card {
+            width: 312px;
+            min-width: 312px;
+            padding: 1rem 1rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .foundation-qr-box {
-            width: 92px;
-            height: 92px;
+            width: 140px;
+            height: 140px;
             background: #ffffff;
-            border-radius: 8px;
-            padding: 0.45rem;
+            border-radius: 10px;
+            padding: 0.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
             flex-shrink: 0;
         }
         .foundation-qr {
@@ -176,23 +220,26 @@
             object-fit: contain;
         }
         .foundation-copy {
-            text-align: left;
+            width: 100%;
+            text-align: center;
             color: var(--white);
+            margin-top: 0.8rem;
         }
         .foundation-copy .donate-label {
-            margin: 0 0 0.08rem;
-            font-size: 0.82rem;
+            margin: 0 0 0.15rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: var(--white);
+            color: rgba(255,255,255,0.96);
         }
         .foundation-copy .foundation-title {
             display: inline-block;
             margin: 0;
             font-family: 'Playfair Display', serif;
-            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            font-size: clamp(0.95rem, 1.35vw, 1.2rem);
             line-height: 1.2;
-            color: #d4b76a;
+            color: #e9c86d;
             text-decoration: none;
+            font-weight: 600;
         }
         .foundation-copy .foundation-title:hover {
             text-decoration: underline;
@@ -1057,13 +1104,24 @@
                 </div>
 
                 <div class="foundation-notice">
-                    <div class="foundation-donation-card">
-                        <div class="foundation-qr-box">
-                            <img class="foundation-qr" src="Chicago_F-n_ QR.png" alt="SIM Chicago Foundation donation QR code" onerror="this.onerror=null;this.src='qrcode_chrome.png';">
+                    <div class="foundation-donation-layout">
+                        <div class="foundation-tribute-card">
+                            <div class="foundation-tribute-content">
+                                <h4>Honor Tandy Green. Support the Next Generation of Technology Leaders.</h4>
+                                <p>SIM Chicago is naming its next scholarship award in honor of Tandy Green, a valued member of the Lenovo team and a dedicated supporter of SIM Chicago and technology.</p>
+                                <p>To honor Tandy’s legacy, SIM Chicago will match donations made in her memory dollar for dollar, up to $5,000, supporting scholarships for technology students.</p>
+                                <p><strong>Double your impact.</strong> Scan the QR code to donate through the SIM Chicago Foundation in honor of Tandy Green.</p>
+                                <p>Thank you for helping carry Tandy’s legacy forward.</p>
+                            </div>
                         </div>
-                        <div class="foundation-copy">
-                            <p class="donate-label">Scan to donate</p>
-                            <a class="foundation-title" href="https://checkout.square.site/merchant/N72HVXQDSBPS6/checkout/J7XG4CZT6RAK3U3VH2O3SUMW?src=webqr" target="_blank" rel="noopener noreferrer">SIM Chicago Foundation</a>
+                        <div class="foundation-donation-card">
+                            <div class="foundation-qr-box">
+                                <img class="foundation-qr" src="Chicago_F-n_ QR.png" alt="SIM Chicago Foundation donation QR code" onerror="this.onerror=null;this.src='qrcode_chrome.png';">
+                            </div>
+                            <div class="foundation-copy">
+                                <p class="donate-label">Scan to donate</p>
+                                <a class="foundation-title" href="https://checkout.square.site/merchant/N72HVXQDSBPS6/checkout/J7XG4CZT6RAK3U3VH2O3SUMW?src=webqr" target="_blank" rel="noopener noreferrer">SIM Chicago Foundation</a>
+                            </div>
                         </div>
                     </div>
                 </div>
