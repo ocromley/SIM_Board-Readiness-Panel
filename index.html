@@ -131,13 +131,71 @@
         }
         .foundation-notice {
             max-width: 900px;
+            margin: 0.9rem auto 2rem;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
             text-align: center;
-            border-left: 4px solid var(--gold);
         }
         .foundation-notice p {
             color: var(--gray);
             line-height: 1.8;
             margin: 0 auto;
+        }
+        .foundation-donation-card {
+            max-width: 430px;
+            width: min(100%, 430px);
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+        }
+        .foundation-qr-box {
+            width: 92px;
+            height: 92px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 0.45rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+        .foundation-qr {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .foundation-copy {
+            text-align: left;
+            color: var(--white);
+        }
+        .foundation-copy .donate-label {
+            margin: 0 0 0.08rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+        .foundation-copy .foundation-title {
+            display: inline-block;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            line-height: 1.2;
+            color: #d4b76a;
+            text-decoration: none;
+        }
+        .foundation-copy .foundation-title:hover {
+            text-decoration: underline;
         }
         .foundation-modal {
             position: fixed;
@@ -997,15 +1055,19 @@
                     <a href="https://www.sim-chicago.org/page/Membership" class="hero-cta primary" target="_blank" rel="noopener noreferrer">SIM Membership</a>
                     <button type="button" class="hero-cta" id="simFoundationButton">The SIM Foundation</button>
                 </div>
-            </div>
-        </div>
 
-        <div class="box foundation-notice" hidden>
-            <div class="box-header">
-                <h2>SIM Foundation</h2>
-                <div class="divider"></div>
+                <div class="foundation-notice">
+                    <div class="foundation-donation-card">
+                        <div class="foundation-qr-box">
+                            <img class="foundation-qr" src="Chicago_F-n_ QR.png" alt="SIM Chicago Foundation donation QR code" onerror="this.onerror=null;this.src='qrcode_chrome.png';">
+                        </div>
+                        <div class="foundation-copy">
+                            <p class="donate-label">Scan to donate</p>
+                            <a class="foundation-title" href="https://checkout.square.site/merchant/N72HVXQDSBPS6/checkout/J7XG4CZT6RAK3U3VH2O3SUMW?src=webqr" target="_blank" rel="noopener noreferrer">SIM Chicago Foundation</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>Thank you for your support of the SIM Foundation! The SIM Foundation is a 501(c)(3) tax-exempt non-profit, EIN 20-4516332. SIM and its Chapters seek to give back to their local communities by supporting programs that contribute to the vitality and continuation of the Information Technology profession.</p>
         </div>
 
         <div class="box">
@@ -1104,6 +1166,7 @@
 
             <div class="panelist-card" style="border: 2px solid var(--gold);">
                 <div class="panelist-photo">
+                
                     <img src="Ann-Madea.jpg" alt="Ann Madea headshot">
                 </div>
                 <div class="panelist-content">
